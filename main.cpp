@@ -3,6 +3,7 @@
 #include <fstream>
 #include <memory>
 #include <vector>
+#include <chrono>
 
 
 
@@ -446,16 +447,30 @@ int main ( int argc , char** argv )
 		{
 			std::cout<<"--------------EXAMPLE3--------------"<<std::endl;
 			
+			auto start = std::chrono::system_clock::now();
+			
 			std::cout<<"bit_counter1= " << bit_counter1(1234568765) << std::endl;
+			
+			auto end = std::chrono::system_clock::now();
+       			std::chrono::duration<double> diff = end - start;	
+       		
+       			std::cout << " time left : " << diff.count() << " s\n";
 		}
 		#endif		
 		
 		#define EXP4 1
 		#if EXP4
 		{
-			std::cout<<"--------------EXAMPLE3--------------"<<std::endl;
+			std::cout<<"--------------EXAMPLE4--------------"<<std::endl;
+			
+			auto start = std::chrono::system_clock::now();
 			
 			std::cout<<"bit_counter2 " << bit_counter2(1234568765) << std::endl;
+			
+			auto end = std::chrono::system_clock::now();
+       			std::chrono::duration<double> diff = end - start;	
+       		
+       			std::cout << " time left : " << diff.count() << " s\n";
 		}
 		#endif	
 	}
